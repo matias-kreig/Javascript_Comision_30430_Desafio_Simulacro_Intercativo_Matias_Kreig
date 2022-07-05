@@ -7,15 +7,15 @@ let email = prompt("Ingrese su E-mail");
 let localidad = prompt("Ingrese su Localidad");
 let telefono = prompt("Ingrese su N° de Telefono");
 
-const validacion = () => {
+const validacion = (nombre, edad, email, localidad, telefono) => {
      
     let isValidNombre, isValidEdad, isValidEmail, isValidLocalidad, isValidTelefono;
     
-    /* isValidNombre = nombre
+   /* isValidNombre = nombre
     isValidEdad = parseInt(edad)
     isValidEmail = isNaN(email)
     isValidLocalidad = localidad
-    isValidTelefono = !isNaN(telefono) */ 
+    isValidTelefono = !isNaN(telefono) */
 
     console.log(
         `Nombre: ${nombre} Tipo: ${typeof nombre}
@@ -28,15 +28,20 @@ const validacion = () => {
 
 
     
-} 
+}  
+
+
  function registro(nombre, edad, email, localidad, telefono){
     if(edad >= 18){
-        console.log(`Bienvenido ${nombre} Puedes Registrarte. Edad: ${edad} (Mayor de Edad). E-Mail: ${email}. Localidad: ${localidad}. Telefono ${telefono}`);
+        alert(`Bienvenido ${nombre} Puedes Registrarte. Edad: ${edad} (Mayor de Edad). E-Mail: ${email}. Localidad: ${localidad}. Telefono ${telefono}`);
+        return;
     }else{
-        console.log(`No puedes Ingresar ${nombre}. Edad: ${edad} (Menor de Edad). E-Mail: ${email}. Localidad: ${localidad}. Telefono ${telefono}`);
+        alert(`No puedes Ingresar ${nombre}. Edad: ${edad} (Menor de Edad). E-Mail: ${email}. Localidad: ${localidad}. Telefono ${telefono}`);
+        return;
     }
 
 }
+
 validacion(nombre, edad, email, localidad, telefono);
 
 registro(nombre, edad, email, localidad, telefono);
