@@ -24,14 +24,8 @@ const validacion = (nombre, edad, email, localidad, telefono) => {
         Localidad: ${localidad} Tipo: ${typeof localidad}
         Telefono: ${telefono} Tipo: ${typeof telefono}`
     )
-    
-
-
-    
 }  
-
-
- function registro(nombre, edad, email, localidad, telefono){
+function registro(nombre, edad, email, localidad, telefono){
     if(edad >= 18){
         alert(`Bienvenido ${nombre} Puedes Registrarte. Edad: ${edad} (Mayor de Edad). E-Mail: ${email}. Localidad: ${localidad}. Telefono ${telefono}`);
         return;
@@ -41,7 +35,5 @@ const validacion = (nombre, edad, email, localidad, telefono) => {
     }
 
 }
-
 validacion(nombre, edad, email, localidad, telefono);
-
 registro(nombre, edad, email, localidad, telefono);
