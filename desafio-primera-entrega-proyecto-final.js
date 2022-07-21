@@ -1,15 +1,11 @@
 //CREANDO HTML DESDE JS
 //CREAR H1 CON TIUTLO
-
 const titulo = document.querySelector(".titulo");
 titulo.textContent = "Bienvenidos al Carrito de Compras";
-
 let padre = document.getElementById("parrafo");
 let parrafo = document.createElement("p");
 parrafo.innerHTML = "<h2>Eligue lo que deseas comprar.<\h2>";
 padre.append(parrafo);
-
-
 
 //CREANDO LI POR MEDIO DE JS
 let contenedor = document.getElementById("container");
@@ -19,30 +15,29 @@ let cosas = [
     {id:3 , nombre:"LECHE" , precio: 200, stock: 15 },
     {id:4 , nombre:"CREMA" , precio: 125 , stock: 10 },
     {id:5 , nombre: "SAL", precio: 110, stock: 20 },
+    ];
 
-];
-
-for(const cosa of cosas){
+    for(const cosa of cosas){
     let li = document.createElement("li");
     li.innerHTML = `<h2> ID: ${cosa.id}<\h2>
                     <p> Producto: ${cosa.nombre}<\p>              
                     <b> $ ${cosa.precio}<b>
                     <b> Stock: ${cosa.stock}<b>
-                    <button  class="btn" id="btnPrincipal"> COMPRAR </button>`;
+                    <button id="btnPrincipal"  class="botonVerde" > COMPRAR </button>`;
                     contenedor.append(li);
-
-                };
+};
 
    
 //INCORPORANDO EVENTO
 //ARRIBA AGREGUR UN BUTTON Y ABAJO QUIERO QUE AL HACERLE CLIC SE PONGA EN VERDE Y ME MANDE UN CONSOLE.LOG DE "COMPRA REALIZADA"
 
-const boton = document.getElementById("container")
-boton.addEventListener("click", function(){
+let boton = document.getElementById("btnPrincipal");
+boton.addEventListener("click", respuestaClick);
+function respuestaClick (){
+boton.className = "botonVerde"
+console.log("Compra Realizada"); 
+}
 
-    boton.className = "btn" ;
-console.log("Compra Realizada");
-})
 
 
 let container = document.querySelector("#container");
