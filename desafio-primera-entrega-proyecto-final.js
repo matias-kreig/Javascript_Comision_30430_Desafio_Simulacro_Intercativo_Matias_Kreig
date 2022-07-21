@@ -27,13 +27,26 @@ for(const cosa of cosas){
     li.innerHTML = `<h2> ID: ${cosa.id}<\h2>
                     <p> Producto: ${cosa.nombre}<\p>              
                     <b> $ ${cosa.precio}<b>
-                    <b> Stock: ${cosa.stock}<b>`;
+                    <b> Stock: ${cosa.stock}<b>
+                    <button  class="btn" id="btnPrincipal"> COMPRAR </button>`;
                     contenedor.append(li);
-};
+
+                };
+
+   
+//INCORPORANDO EVENTO
+//ARRIBA AGREGUR UN BUTTON Y ABAJO QUIERO QUE AL HACERLE CLIC SE PONGA EN VERDE Y ME MANDE UN CONSOLE.LOG DE "COMPRA REALIZADA"
+
+const boton = document.getElementById("container")
+boton.addEventListener("click", function(){
+
+    boton.className = "btn" ;
+console.log("Compra Realizada");
+})
+
 
 let container = document.querySelector("#container");
-
-
+    
 
 //INCORPORANDO ARRAY
 const productos = [
@@ -56,3 +69,4 @@ while(entrada != "ESC"){
 for (item of carrito){
     console.log(item)
 }
+
