@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
         carrito = JSON.parse(localStorage.getItem("carrito"));
 
             containerCarrito.innerHTML =`
+                            
                             <h2>Carrito de Compras</h2>
                             <p>Tienes ${carrito.length} productos en el carrito</p>
             `;
@@ -23,10 +24,23 @@ window.addEventListener('load', function(){
 //CREANDO HTML DESDE JS
 //CREAR H1 CON TIUTLO
 const titulo = document.querySelector(".titulo");
-titulo.textContent = "Bienvenidos al Carrito de Compras";
+titulo.textContent = `
+Bienvenidos al Carrito de Compras
+`
+;
 let padre = document.getElementById("parrafo");
 let parrafo = document.createElement("p");
-parrafo.innerHTML = "<h2>Eligue lo que deseas comprar.<\h2>";
+parrafo.innerHTML = `
+<div class="container">
+    
+        <div class="col-11 col-lg-11 col-md-11 mt-1 mb-2 d-flex justify-content-center ">
+        <h2>Eligue lo que deseas comprar.<\h2>
+         </div>
+    
+</div>
+
+
+`;
 padre.append(parrafo);
 
 //CREANDO LI POR MEDIO DE JS
@@ -42,13 +56,42 @@ let cosas = [
 cosas.forEach((cosa,index)=>{
     let li = document.createElement("li");
     li.id = cosa.id;
-    li.innerHTML=`
-                    <h2 class="card" style="width: 18rem;"> ID: ${cosa.id}<\h2>
-                    <p class="card" style="width: 18rem;"> Producto: ${cosa.nombre}<\p>              
-                    <p class="card" style="width: 18rem;"> $ ${cosa.precio}<\p>
-                    <p class="card" style="width: 18rem;"> Stock: ${cosa.stock}<\p>
-                    <button class="botonRespuesta" id="btn-${cosa?.nombre}" onclick="agregarAlCarro(${index})"> COMPRAR </button>`;
-                    contenedor.appendChild(li);
+    li.innerHTML=`<div class="container-fluid d-flex justify-content-center me-2">
+                    <div class="row ">
+                        <div class="col-11 col-lg-11 col-md-11 mt-1 mb-2 d-flex justify-content-center ">
+                            <h5 class="h5Id " > ID: ${cosa.id}<\h5>
+                            <img src="./imagenes/PlaceHolder 400x200.png" class="shadow p-3 mb-5 bg-body rounded" alt="...">
+                            
+                        </div>
+                        
+                        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+                            
+                            <h3 class="" > Producto: ${cosa.nombre}<\h3>              
+                            
+                        </div>
+                        
+                        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+                                        
+                            <h3 class="" > $ ${cosa.precio}<\h3>
+                           
+                        </div>
+                        
+                        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+                            
+                            <h4 class="" > Stock: ${cosa.stock}<\h4>
+                            
+                        </div>
+                        
+                        <div class="col-11 col-lg-11 col-md-11 mt-1 mb-3 d-flex justify-content-center ">
+                            
+                            <button class="botonRespuesta btn btn-success btn-lg " id="btn-${cosa?.nombre}" onclick="agregarAlCarro(${index})"> <h4>COMPRAR</h4>  </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                `;
+                contenedor.appendChild(li);
 })
 
 function agregarAlCarro(cosaIndex){
