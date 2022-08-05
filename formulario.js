@@ -114,11 +114,7 @@ formulario.addEventListener('submit', (e) => {
 	}
 });
 
- let sweetAlert = document.getElementsById('formulario__mensaje-exito-activo')
-        sweetAlert.addEventListener("click", ()=>{
-             
-            Swal.fire('Registro')
-        })
+
 
 /* 
 CLASE DEL BOTON PARA HACER SWEETALERT

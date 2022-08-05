@@ -105,7 +105,26 @@ function actualizarStorage(carrito){
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-
+const button = document.getElementsByClassName('botonRespuesta')
+button.addEventListener('click', ()=> {
+    //esta funcion ejecuta el agregar el carrito con la id del producto
+    agregarAlCarro(producto.id)
+    // sweet alert luego de agregar productos al carrito
+    const Toast = Swal.mixin({
+        toast:true,
+        position: 'top-star',
+        timmer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) =>{
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: 'agregando al carrito'
+    })
+})
 
 
 
