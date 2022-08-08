@@ -124,7 +124,7 @@ button.addEventListener('click', ()=> {
     //esta funcion ejecuta el agregar el carrito con la id del producto
     agregarAlCarro(producto.id)
     // sweet alert luego de agregar productos al carrito
-    const Toast = Swal.mixin({
+    /* const Toast = Swal.mixin({
         toast:true,
         position: 'top-star',
         timmer: 2500,
@@ -137,7 +137,7 @@ button.addEventListener('click', ()=> {
     Toast.fire({
         icon: 'success',
         title: 'agregando al carrito'
-    })
+    }) */
 } )
  
 
