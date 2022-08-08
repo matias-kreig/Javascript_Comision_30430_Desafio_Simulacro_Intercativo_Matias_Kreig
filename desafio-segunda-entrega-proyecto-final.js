@@ -98,6 +98,20 @@ function agregarAlCarro(cosaIndex){
     carrito.push(cosas[cosaIndex]);
     console.log(carrito);
 
+    const Toast=Swal.mixin({
+        toast: true,
+        position: 'top-star',
+        timmer: 2500,
+        timmerProgressBar: true,
+        didOpen:(toast)=>{
+            toast.addEventListener('mouseenter', Swal.stoptimmer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    toast.fire({
+        icon: 'success',
+        title: 'agregado al carrito'
+    })
     actualizarStorage(carrito);
 }
 
@@ -124,8 +138,8 @@ button.addEventListener('click', ()=> {
         icon: 'success',
         title: 'agregando al carrito'
     })
-})
-
+} )
+ 
 
 
 
