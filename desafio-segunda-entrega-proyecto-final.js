@@ -1,4 +1,4 @@
-let carrito = [];
+/* let carrito = [];
 
 console.log('-->', localStorage.getItem("carrito"));
 
@@ -19,9 +19,9 @@ window.addEventListener('load', function(){
         <p>No tienes productos pre cargados en el carrito</p>
         `;
     }
-});
+}); */
 
-//CREANDO HTML DESDE JS
+/* //CREANDO HTML DESDE JS
 //CREAR H1 CON TIUTLO
 const titulo = document.querySelector(".titulo");
 titulo.textContent = `
@@ -41,11 +41,11 @@ parrafo.innerHTML = `
 
 
 `;
-padre.append(parrafo);
+padre.append(parrafo); */
 
 //CREANDO LI POR MEDIO DE JS
-let contenedor = document.getElementById("container");
-let cosas = [
+/*let contenedor = document.getElementById("container");
+ let cosas = [
     {id:1 , nombre:"ARROZ" , precio: 100, stock: 20 },
     {id:2 , nombre:"AZUCAR" , precio: 150, stock: 8 },
     {id:3 , nombre:"LECHE" , precio: 200, stock: 15 },
@@ -92,10 +92,10 @@ cosas.forEach((cosa,index)=>{
                 
                 `;
                 contenedor.appendChild(li);
-})
+}) */
 
-function agregarAlCarro(cosaIndex){
-    carrito.push(cosas[cosaIndex]);
+/* function agregarAlCarro(_supermercadoIndex){
+    carrito.push(supermercados[_supermercadoIndex]);
     console.log(carrito);
 
     const Toast=Swal.mixin({
@@ -117,9 +117,9 @@ function agregarAlCarro(cosaIndex){
 
 function actualizarStorage(carrito){
     localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+} */
 
-const button = document.getElementsByClassName('botonRespuesta')
+/* const button = document.getElementsByClassName('botonRespuesta')
 button.addEventListener('click', ()=> {
     //esta funcion ejecuta el agregar el carrito con la id del producto
     agregarAlCarro(producto.id)
@@ -128,7 +128,7 @@ button.addEventListener('click', ()=> {
         toast:true,
         position: 'top-star',
         timmer: 2500,
-        timerProgressBar: true,
+         timerProgressBar: true,
         didOpen: (toast) =>{
             toast.addEventListener('mouseenter', Swal.stopTimer)
             toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -138,13 +138,68 @@ button.addEventListener('click', ()=> {
         icon: 'success',
         title: 'agregando al carrito'
     }) */
-} )
+} ) 
+
+*/
  
+/* API */
+
+/* let contenedor = document.getElementById("container");
+const supermercado =[]
+supermercado.forEach((supermercado,index)=>{
+    let supermercadoLi = document.createElement("li");
+    supermercadoLi.id = supermercado.id;
+    supermercado.innerHTML= `<div class="container-fluid d-flex justify-content-center me-2">
+    <div class="row ">
+        <div class="col-11 col-lg-11 col-md-11 mt-1 mb-2 d-flex justify-content-center ">
+            <h5 class="h5Id " > ID: ${supermercado.id}<\h5>
+            <img src="./imagenes/PlaceHolder 400x200.png" class="shadow p-3 mb-5 bg-body rounded" alt="...">
+            
+        </div>
+        
+        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+            
+            <h3 class="" > Producto: ${supermercado.title}<\h3>              
+            
+        </div>
+        
+        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+                        
+            <h3 class="" > $ ${supermercado.price}<\h3>
+           
+        </div>
+        
+        <div class="col-11 col-lg-11 col-md-11 m-1 shadow p-3 mb-5 bg-body rounded d-flex justify-content-center">
+            
+            <h4 class="" > Stock: ${supermercado.available_quantity}<\h4>
+            
+        </div>
+        
+        <div class="col-11 col-lg-11 col-md-11 mt-1 mb-3 d-flex justify-content-center ">
+            
+            <button class="botonRespuesta btn btn-success btn-lg " id="btn-${supermercado?.title}" onclick="agregarAlCarro(${index})"> <h4>COMPRAR</h4>  </button>
+        </div>
+    
+    </div>
+</div>`;
+contenedor.appendChild(li);
 
 
+})
+const botonB = document.getElementById("botonBuscador")
 
+const traerInfo = async()=>{
+   const buscador= document.getElementById("buscador")
 
+    let response = await fetch(`http://api.mercadolibre.com/sites/MLA/search?q=${buscador.value}`) 
+    console.log(response);
+    let data = await response.json()
+    
+    supermercado.push(...data.results)
+}
 
+botonBuscador.addEventListener("click", e=>traerInfo())
+ */
 
 
 
