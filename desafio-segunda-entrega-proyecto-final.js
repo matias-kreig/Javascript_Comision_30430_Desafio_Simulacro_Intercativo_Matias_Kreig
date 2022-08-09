@@ -108,7 +108,7 @@ function agregarAlCarro(cosaIndex){
             toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
     })
-    toast.fire({
+    Toast.fire({
         icon: 'success',
         title: 'agregado al carrito'
     })
